@@ -4,10 +4,10 @@ import { Review } from "./review.model";
 export interface Product {
   id: number;
   thumbnail: string;
+  title: string;
   imgs: string[];
   category: string;
   details: string;
-  title: string;
   price: number;
   quantity: number;
   rating: Rating;

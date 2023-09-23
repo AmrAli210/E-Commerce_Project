@@ -1,0 +1,70 @@
+header {
+  background-color: #f9f9f9;
+}
+
+.main-desc {
+
+  h2 {
+    font-family: "Lugrasimo";
+    line-height: 55px;
+    font-size: 55px;
+    font-style: italic;
+    font-weight: 800;
+    padding: 0px 20px;
+  }
+
+}
+
+.img-container {
+    display: flex;
+    align-items: flex-end;
+
+    .bg-types
+    {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+  .first-img {
+    width: 20%;
+    height: 390px;
+    background-image: url("/assets/imgs/home imgs/skin care 1.jpg");
+    @extend .bg-types;
+  }
+
+  .second-img {
+    width: 14%;
+    height: 330px;
+    background-image: url("/assets/imgs/home imgs/skin care 2.jpg");
+    @extend .bg-types;
+  }
+
+  .third-img {
+    width: 22%;
+    height: 250px;
+    background-image: url("/assets/imgs/home imgs/skin care 3.jpg");
+    @extend .bg-types;
+  }
+
+  .fourth-img {
+    width: 15%;
+    height: 200px;
+    background-image: url("/assets/imgs/home imgs/skin care 4.jpg");
+    @extend .bg-types;
+  }
+
+  .fifth-img {
+    width: 19%;
+    height: 360px;
+    background-image: url("/assets/imgs/home imgs/skin care 5.jpg");
+    @extend .bg-types;
+  }
+
+  .sixth-img {
+    width: 15%;
+    height: 320px;
+    background-image: url("/assets/imgs/home imgs/skin care 6.jpg");
+    @extend .bg-types;
+  }}
+  
