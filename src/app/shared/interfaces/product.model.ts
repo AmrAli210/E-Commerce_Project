@@ -3,15 +3,15 @@ import { Review } from "./review.model";
 
 export interface Product {
   id: number;
-  thumbnail: string;
   title: string;
+  thumbnail: string;
   imgs: string[];
   category: string;
   details: string;
   price: number;
   quantity: number;
-  rating: Rating;
-  reviews: Review[];
+  rating?: Rating;
+  reviews?: Review[];
 }
 
 

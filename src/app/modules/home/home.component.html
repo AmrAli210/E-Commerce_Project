@@ -1,19 +1,47 @@
-<header class=" pt-5 "> 
+<header class="pt-5">
+  <div
+    class="main-desc pt-5 d-flex justify-content-center align-items-center text-center"
+  >
+    <h2>
+      Embrace Your <br />
+      beauty & confidence <br />
+      with Emmable
+    </h2>
+  </div>
 
-    <div class="main-desc pt-5 d-flex justify-content-center align-items-center text-center">
-        <h2> Embrace Your <br/> beauty & confidence <br/> with Emmable</h2>
-    </div>
-    
-    <div class="img-container ">
-        <div class="first-img" ></div>
-        <div class="second-img" ></div>
-        <div class="third-img" ></div>
-        <div class="fourth-img" ></div>
-        <div class="fifth-img" ></div>
-        <div class="sixth-img" ></div>
-    </div>
-
-
-
+  <div class="img-container">
+    <div class="first-img"></div>
+    <div class="second-img"></div>
+    <div class="third-img"></div>
+    <div class="fourth-img"></div>
+    <div class="fifth-img"></div>
+    <div class="sixth-img"></div>
+  </div>
 </header>
 
+<section class="container py-5" id="bestSeller">
+  <div class="carousel-title my-5">
+    <h2>Best Seller Products</h2>
+  </div>
+  <app-product-carousel [bestSellers]="bestSeller"></app-product-carousel>
+</section>
+
+
+
+<section class="container py-4" id=" change-categories">
+
+  <div class="category-btns d-flex justify-content-center">
+
+    <a (click)="getBestie()">Bestie deals for you</a>
+    <a (click)="getNewBeauty()">New beauty bestie</a>
+    <a (click)="getMustHave()" >Must-have beauties</a>
+
+  </div>
+
+  <app-product-carousel [mustHave]="mustHave" [newBeauty]="newBeauty"  [bestieDeals]="bestieDeals"></app-product-carousel>
+
+  <!-- <app-product-carousel [newBeauty]="newBeauty"></app-product-carousel>
+
+  <app-product-carousel [mustHave]="mustHave"></app-product-carousel> -->
+
+</section>

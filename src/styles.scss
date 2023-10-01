@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
 
-body {
-  font-family: var(--font-family);
-}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -19,3 +16,46 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-style:normal ;
   src: url('./assets/fonts/Lugrasimo-Regular.ttf') format("ttf");
 }
+
+
+.owl-carousel {
+  width: 90%;
+  margin: auto;
+
+  .owl-item {
+    z-index: 999;
+    // width: 260px !important;
+    // padding-right: 20px;
+  }
+
+  .owl-nav {
+    .owl-prev,
+    .owl-next {
+      height: 40px;
+      width: 40px;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: absolute;
+      top: 40% ;
+      font-size: 25px !important;
+      border-radius: 50% !important;
+      background-color: transparent;
+      color: gray;
+      
+      &:hover{
+        background-color: transparent;
+        color: gray;
+      }
+    }
+
+    .owl-prev {
+      left: -40px;
+    }
+    .owl-next {
+      right: -40px;
+    }
+  }
+}
+

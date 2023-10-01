@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {HomeModule} from "./modules/home/home.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { HttpClientModule } from '@angular/common/http';
 
 import { RouterModule } from '@angular/router';
 import { routes } from './app-routing';
@@ -15,11 +16,13 @@ import { LayoutModule } from './layout/layout.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { initialNavigation:"enabledBlocking"}),
     HomeModule,
     SharedModule,
     LayoutModule,
+    
     
   ],
   providers: [],
