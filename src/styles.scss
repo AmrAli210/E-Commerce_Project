@@ -19,13 +19,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .owl-carousel {
-  width: 90%;
+  width: 80%;
   margin: auto;
 
   .owl-item {
     z-index: 999;
-    // width: 260px !important;
-    // padding-right: 20px;
   }
 
   .owl-nav {

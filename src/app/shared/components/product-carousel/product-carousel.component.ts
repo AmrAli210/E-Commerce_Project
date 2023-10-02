@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Product } from '../../interfaces/product.model';
+import { User } from '../../interfaces/user.model';
 
 @Component({
   selector: 'app-product-carousel',
@@ -12,6 +13,7 @@ export class ProductCarouselComponent implements OnInit {
   @Input() bestieDeals: Product[] = [];
   @Input() newBeauty: Product[] = [];
   @Input() mustHave: Product[] = [];
+  @Input() customersComments:User[]=[];
 
   customOptions: OwlOptions = {
     loop: false,
@@ -41,6 +43,39 @@ export class ProductCarouselComponent implements OnInit {
       },
       1000: {
         items: 4,
+        nav: true,
+      },
+    },
+  };
+  
+  customerOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: true,
+    navSpeed: 600,
+    navText: [
+      '<i class= "pi pi-chevron-left"></i>',
+      '<i class= "pi pi-chevron-right"></i>',
+    ],
+    nav: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true,
+        center: true,
+      },
+      500: {
+        items: 1,
+        nav: true,
+      },
+      600: {
+        items: 2,
+        nav: true,
+      },
+      1000: {
+        items: 3,
         nav: true,
       },
     },

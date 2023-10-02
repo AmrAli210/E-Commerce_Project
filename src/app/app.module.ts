@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app-routing';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { LayoutModule } from './layout/layout.module';
     HomeModule,
     SharedModule,
     LayoutModule,
+    FontAwesomeModule,
     
     
   ],

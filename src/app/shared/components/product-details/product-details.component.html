@@ -1,8 +1,22 @@
-<div *ngIf="productDetails"  class="product-card">
-    <img [src]="productDetails.thumbnail"  alt="">
+<div *ngIf="productDetails" class="product-card">
+  <img [src]="productDetails.thumbnail" alt="" />
 
   <div class="card-body d-flex justify-content-between">
     <h3>{{ productDetails.title }}</h3>
     <h5>{{ productDetails.price }}</h5>
+  </div>
+</div>
+
+<div *ngIf="commentDetails" class="customer-card">
+  <img [src]="commentDetails.img" alt="" />
+
+  <div class="card-body">
+    <h3 class="mt-4 mb-5">{{ commentDetails.name }}</h3>
+    <h5 class="mb-4">" i Love This Product. {{ commentDetails.comment }}"</h5>
+    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+    <fa-icon [icon]="faStar" class="checked"></fa-icon>
+    <fa-icon [icon]="faStar" class="checked"></fa-icon>
   </div>
 </div>
