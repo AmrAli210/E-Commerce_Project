@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Product } from '../../interfaces/product.model';
 import { User } from '../../interfaces/user.model';
+import { PopupDialogComponent } from 'src/app/modules/home/components/popup-dialog/popup-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product-carousel',
@@ -14,6 +16,7 @@ export class ProductCarouselComponent implements OnInit {
   @Input() newBeauty: Product[] = [];
   @Input() mustHave: Product[] = [];
   @Input() customersComments:User[]=[];
+  @Input() productImgs?:string[];
 
   customOptions: OwlOptions = {
     loop: false,
@@ -81,10 +84,54 @@ export class ProductCarouselComponent implements OnInit {
     },
   };
 
-  constructor() {}
+  productOptions: OwlOptions = {
+    dots: true,
+    navSpeed: 600,
+    nav:false,
+    responsive: {
+      0: {
+        items: 1,
+       
+        center: true,
+      },
+      500: {
+        items: 1,
+        
+      },
+      600: {
+        items: 2,
+        
+      },
+      1000: {
+        items: 3,
+        
+      },
+    },
+  };
+
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
   }
 
+  openPopup(selectedProduct:Product) {
+    this.dialog.open(PopupDialogComponent, {
+      width: '60%',
+      height: '450px',
+      data: { 
+        title: selectedProduct.title,
+        imgs:selectedProduct.imgs,
+        quantity:selectedProduct.quantity,
+        details:selectedProduct.details,
+        price:selectedProduct.price
+      }});
+  }
+
+  getSelectedProduct(selectedItem: Product)
+  {
+    // console.log(selectedItem);
+    this.openPopup(selectedItem)
+    
+  }
 
 }

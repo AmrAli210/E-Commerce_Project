@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="product-img col-md-6">
+    <app-product-carousel [productImgs]="data.imgs"></app-product-carousel>
+  </div>
+
+  <div class="product-details p-5 col-md-6">
+
+    <div mat-dialog-content>
+
+      <h2>{{ data.title }}</h2>
+      <h4>{{ data.price }}</h4>
+
+      <div class="btns d-inline">
+        <button type="button" (click)="removeItem()"><i class="pi pi-minus"></i></button>
+        <span class="mx-2"> {{quantity}} </span>
+        <button type="button" (click)="addItem()"><i class="pi pi-plus"></i></button>
+      </div>
+      <span class="stock-left"> Stock: <p>{{ data.quantity }} left</p> </span>
+
+      <div class="product-desc py-3 mt-4">
+        <h3 class="m-0 p-0 fs-6 fw-bolder">Product Details</h3>
+        <p class="my-2">{{ data.details }}</p>
+      </div>
+    </div>
+
+      <a class=" d-flex justify-content-center" routerLink="#"> Add to Cart </a>
+
+  </div>
+
+</div>

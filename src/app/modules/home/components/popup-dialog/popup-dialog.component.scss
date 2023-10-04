@@ -1,0 +1,49 @@
+$border: 1px solid rgb(128, 128, 128, 0.4);
+
+.product-details {
+    
+  .product-desc {
+    border-top: $border;
+    border-bottom: $border;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: rgb(17, 17, 160);
+    padding: 0.5rem 4rem ;
+    margin-top: 1rem;
+    transition: all 0.3s;
+    &:hover
+    {
+        background-color: rgb(17, 17, 160,0.8);
+
+    }
+  }
+
+  .btns {
+    border: $border;
+    width: fit-content;
+    padding: 10px;
+    margin-right: 10px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      color: grey;
+
+      &:focus {outline:none;}
+    
+      i {
+        font-size: 10px;
+        border: none;
+      }
+    }
+  }
+}
+.stock-left {
+  p {
+    font-weight: 600;
+    display: inline;
+  }
+}

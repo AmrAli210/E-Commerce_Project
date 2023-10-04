@@ -1,5 +1,5 @@
-<div *ngIf="productDetails" class="product-card">
-  <img [src]="productDetails.thumbnail" alt="" />
+<div (click)="getSelectedProduct()" *ngIf="productDetails" class="product-card">
+  <img  [src]="productDetails.thumbnail" alt="" />
 
   <div class="card-body d-flex justify-content-between">
     <h3>{{ productDetails.title }}</h3>

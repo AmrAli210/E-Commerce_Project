@@ -4,9 +4,7 @@ import { ProductCarouselComponent } from './components/product-carousel/product-
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -17,7 +15,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CommonModule,
     CarouselModule,
     FontAwesomeModule,
+    MatDialogModule,
   ],
   exports:[ProductCarouselComponent]
 })
+
 export class SharedModule { }

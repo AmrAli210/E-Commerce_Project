@@ -33,11 +33,7 @@
     <a (click)="getMustHave()">Must-have beauties</a>
   </div>
 
-  <app-product-carousel
-    [mustHave]="mustHave"
-    [newBeauty]="newBeauty"
-    [bestieDeals]="bestieDeals"
-  ></app-product-carousel>
+  <app-product-carousel [mustHave]="mustHave" [newBeauty]="newBeauty" [bestieDeals]="bestieDeals"></app-product-carousel>
 
   <!-- <app-product-carousel [newBeauty]="newBeauty"></app-product-carousel>
 
@@ -45,16 +41,12 @@
 </section>
 
 <section
-  class="container-fluid py-4 customers-comments"
-  id="customers-comments"
->
+  class="container-fluid py-4 customers-comments" id="customers-comments">
   <div class="carousel-title my-5">
     <h2>What Our Customers Have To Say</h2>
     <p>Some OF Our Popular Customers</p>
   </div>
-  <app-product-carousel
-    [customersComments]="customersComments"
-  ></app-product-carousel>
+  <app-product-carousel [customersComments]="customersComments"></app-product-carousel>
 </section>
 
 <section class="contact-us">
