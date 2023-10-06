@@ -23,30 +23,41 @@
   <div class="carousel-title my-5">
     <h2>Best Seller Products</h2>
   </div>
-  <app-product-carousel [bestSellers]="bestSeller"></app-product-carousel>
+  <app-product-carousel *ngIf="bestSeller.length" [products]="bestSeller"></app-product-carousel>
 </section>
 
 <section class="container py-4" id="change-categories">
-  <div class="category-btns d-flex justify-content-center">
-    <a (click)="getBestie()">Bestie deals for you</a>
-    <a (click)="getNewBeauty()">New beauty bestie</a>
-    <a (click)="getMustHave()">Must-have beauties</a>
+
+  <div class="category-btns text-center ">
+    <p class="active" [ngClass]="{'active':selectedCategory===categoryName}" (click)="getCategoryName(categoryName)" *ngFor="let categoryName of categoryNames">{{categoryName}}</p>
   </div>
 
-  <app-product-carousel [mustHave]="mustHave" [newBeauty]="newBeauty" [bestieDeals]="bestieDeals"></app-product-carousel>
+ 
+    <div *ngIf="selectedCategory ==='Bestie deals for you'" class="bestieDeals">
 
-  <!-- <app-product-carousel [newBeauty]="newBeauty"></app-product-carousel>
+      <app-product-carousel  *ngIf="bestieDeals.length" [products]="bestieDeals"></app-product-carousel>
+  
+    </div>
+  <div *ngIf="selectedCategory ==='New beauty bestie'" class="newBeauty">
 
-  <app-product-carousel [mustHave]="mustHave"></app-product-carousel> -->
+    <app-product-carousel *ngIf="newBeauty.length" [products]="newBeauty"></app-product-carousel>
+
+  </div>
+
+  <div *ngIf="selectedCategory ==='Must-have beauties'" class="mustHave">
+
+    <app-product-carousel  *ngIf="mustHave.length" [products]="mustHave"></app-product-carousel>  
+
+  </div>
+       
 </section>
 
-<section
-  class="container-fluid py-4 customers-comments" id="customers-comments">
+<section class="container-fluid py-4 customers-comments" id="customers-comments">
   <div class="carousel-title my-5">
     <h2>What Our Customers Have To Say</h2>
     <p>Some OF Our Popular Customers</p>
   </div>
-  <app-product-carousel [customersComments]="customersComments"></app-product-carousel>
+  <app-product-carousel *ngIf="customersComments.length" [customersComments]="customersComments"></app-product-carousel>
 </section>
 
 <section class="contact-us">

@@ -1,5 +1,7 @@
 $font-family: Lugrasimo;
 $main-backgroundColor: #f9f9f9;
+$border: 1px solid rgb(255, 255, 255,0.5);
+
 
 header {
   background-color: $main-backgroundColor;
@@ -81,36 +83,33 @@ header {
 }
 
 .category-btns {
+  border-bottom: 3px solid rgb(128, 128, 128, 0.1);
   width: 80%;
   margin: auto;
-  border-bottom: 3px solid rgb(128, 128, 128, 0.1);
+  padding-bottom: 0.5rem;
+ p 
+ {
+  display: inline;
   cursor: pointer;
-  a {
-    margin-right: 1.5rem;
-    padding-bottom: 5px;
-    color: rgb(128, 128, 128, 0.7);
-    transition: all 0.3s;
-    position: relative;
-    text-decoration: none;
-    // &:hover
-    // {
-    //   color: black;
-    // }
-  }
-}
-
-.active {
+  margin-right: 1.5rem;
+  color: rgb(128, 128, 128,0.6);
+  position: relative;
+ }
+ .active
+ {
   color: black;
-
-  &::after {
-    content: "";
+  &::after
+  {
+    content: '';
     height: 2px;
     width: 100%;
     position: absolute;
-    top: 25px;
+    top: 26px;
     left: 0;
     background-color: orange;
+
   }
+ }
 }
 
 #customers-comments {
@@ -144,8 +143,8 @@ header {
 
   .brdr
   {
-    border-left: 1px solid rgb(255, 255, 255,0.5) ;
-    border-right: 1px solid rgb(255, 255, 255,0.5) ;
+    border-left: $border;
+    border-right: $border ;
   }
 }
 
