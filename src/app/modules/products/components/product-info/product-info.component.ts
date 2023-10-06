@@ -10,18 +10,18 @@ import { Product } from 'src/app/shared/interfaces/product.model';
 export class ProductInfoComponent {
   quantity: number = 1;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Product) {}
+  // constructor(@Inject(MAT_DIALOG_DATA) public data: Product) {}
 
-  addItem() {
-    if (this.data.quantity > this.quantity) {
-      this.quantity += 1;
-    }
+  // addItem() {
+  //   if (this.data.quantity > this.quantity) {
+  //     this.quantity += 1;
+  //   }
     
-  }
+  // }
 
-  removeItem() {
-    if (this.quantity > 1) {
-      this.quantity -= 1;
-    }
-  }
+  // removeItem() {
+  //   if (this.quantity > 1) {
+  //     this.quantity -= 1;
+  //   }
+  // }
 }

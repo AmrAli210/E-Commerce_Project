@@ -9,7 +9,7 @@ import { ProductCarouselComponent } from 'src/app/shared/components/product-caro
 @NgModule({
   declarations: [
     ProductsComponent,
-    ProductCarouselComponent,
+    // ProductCarouselComponent,
     ProductInfoComponent
   ],
   imports: [
