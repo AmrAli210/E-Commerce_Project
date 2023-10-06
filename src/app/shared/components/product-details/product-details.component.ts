@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../interfaces/product.model';
 import { User } from '../../interfaces/user.model';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -15,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
 
   faStar = faStar;
 
-  constructor() {}
+  constructor( public router: Router) {}
 
   ngOnInit(): void {}
 

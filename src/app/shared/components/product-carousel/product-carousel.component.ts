@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ElementRef, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Product } from '../../interfaces/product.model';
 import { User } from '../../interfaces/user.model';
@@ -11,12 +11,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./product-carousel.component.scss'],
 })
 export class ProductCarouselComponent implements OnInit {
-  @Input() bestSellers: Product[] = [];
-  @Input() bestieDeals: Product[] = [];
-  @Input() newBeauty: Product[] = [];
-  @Input() mustHave: Product[] = [];
+  @Input() products:Product[]=[];
   @Input() customersComments:User[]=[];
-  @Input() productImgs?:string[];
+  @Input() productImgs:string[]=[];
 
   customOptions: OwlOptions = {
     loop: false,
@@ -41,7 +38,7 @@ export class ProductCarouselComponent implements OnInit {
         nav: true,
       },
       600: {
-        items: 2,
+        items: 3,
         nav: true,
       },
       1000: {
@@ -85,26 +82,35 @@ export class ProductCarouselComponent implements OnInit {
   };
 
   productOptions: OwlOptions = {
-    dots: true,
+    loop: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
     navSpeed: 600,
-    nav:false,
+    nav:true,
+    navText: [
+          '<i class= "pi pi-chevron-left"></i>',
+          '<i class= "pi pi-chevron-right"></i>',
+        ],
     responsive: {
       0: {
         items: 1,
-       
+        nav: true,
         center: true,
       },
       500: {
         items: 1,
+        nav: true,
         
       },
       600: {
         items: 2,
-        
+        nav: true,
       },
       1000: {
         items: 3,
-        
+        nav: true,
       },
     },
   };
@@ -129,9 +135,7 @@ export class ProductCarouselComponent implements OnInit {
 
   getSelectedProduct(selectedItem: Product)
   {
-    // console.log(selectedItem);
     this.openPopup(selectedItem)
-    
   }
 
 }

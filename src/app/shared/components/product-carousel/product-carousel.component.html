@@ -1,41 +1,30 @@
-    <div class=" mt-2">
+    <div class="carousel-holder">
+    <div class=" mt-2 ">
       <owl-carousel-o [options]="customOptions">
-        <ng-container  *ngFor="let bestSeller of bestSellers; let i = index">
+        <ng-container *ngFor="let product of products; let i = index">
           <ng-template carouselSlide [width]="300">
-            <div  class="border-1 surface-border border-round m-2 ">
-              <app-product-details (currentProduct)="getSelectedProduct($event)" [productDetails]="bestSeller"></app-product-details>
+            <div class="border-1 surface-border border-round m-2 ">
+            <app-product-details (currentProduct)="getSelectedProduct($event)" [productDetails]="product"></app-product-details>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+
+    <div class=" mt-5">
+      <owl-carousel-o [options]="customerOptions">
+        <ng-container  *ngFor="let customersComment of customersComments; let i = index">
+          <ng-template carouselSlide [width]="300">
+            <div class="border-1 surface-border border-round m-2 ">
+              <app-product-details [commentDetails]="customersComment"></app-product-details>
             </div>
           </ng-template>
         </ng-container>
       </owl-carousel-o>
     </div>
 
-    <div class=" mt-5">
-      <owl-carousel-o [options]="customOptions">
-        <ng-container  *ngFor="let bestieDeal of bestieDeals; let i = index">
-          <ng-template carouselSlide [width]="300">
-            <div class="border-1 surface-border border-round m-2 ">
-              <app-product-details (currentProduct)="getSelectedProduct($event)" [productDetails]="bestieDeal"></app-product-details>
-            </div>
-          </ng-template>
-        </ng-container>
-      </owl-carousel-o>
-    </div> 
-
-    <div class=" mt-5">
-      <owl-carousel-o [options]="customerOptions">
-        <ng-container  *ngFor="let customerComment of customersComments; let i = index">
-          <ng-template carouselSlide [width]="300">
-            <div class="border-1 surface-border border-round m-2 ">
-              <app-product-details [commentDetails]="customerComment"></app-product-details>
-            </div>
-          </ng-template>
-        </ng-container>
-      </owl-carousel-o>
-    </div> 
-
-
-    <div class="selected-product">
+    <div *ngIf="productImgs.length" class="selected-product">
       <owl-carousel-o [options]="productOptions">
         <ng-container  *ngFor="let productImg of productImgs; let i = index">
           <ng-template  carouselSlide [width]="300">
@@ -48,7 +37,7 @@
     </div> 
     
 
-    
+     
 
 
  

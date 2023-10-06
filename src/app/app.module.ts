@@ -12,6 +12,7 @@ import { LayoutModule } from './layout/layout.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +26,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SharedModule,
     LayoutModule,
     FontAwesomeModule,
-    
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
