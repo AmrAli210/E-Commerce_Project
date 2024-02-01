@@ -1,0 +1,83 @@
+<section id="mybag-products" class="container">
+    <div *ngIf="myBagProducts" class="row">
+        <div class="col-md-4" *ngFor="let myBagProduct of myBagProducts; let i = index">
+            <div class="product-card d-flex">
+                    <img [src]="myBagProduct.thumbnail" alt=""/>
+                <div class="product-info ms-2">
+                    <h2>{{ myBagProduct.title }}</h2>
+                    <p>Product Price : ${{ myBagProduct.originalPrice }}</p>
+                    <p>items Purchased : <strong>{{ myBagProduct.valueOfQuantity }}</strong></p>
+                    <p>
+                    Total Price : ${{ myBagProduct.purchasePrice | number : "1.0-2" }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container pt-4" id="shipping-details">
+    <h2>Shipping details</h2>
+    <div class="col-md-6  ">
+        <form id="shippingForm" [formGroup]="shippingDetials" (ngSubmit)="submit()" >
+            <div class="name-info d-flex">
+                <input
+                  formControlName="firstName"
+                  class="form-control me-4"
+                  type="text"
+                  placeholder="First Name"
+                />
+                <input
+                  formControlName="lastName"
+                  class="form-control ms-4 "
+                  type="text"
+                  placeholder="Last Name"
+                />
+            </div>
+            <input
+              formControlName="email"
+              class="form-control"
+              type="email"
+              placeholder="Your Email"
+            />
+            <input
+              formControlName="address"
+              class="form-control"
+              type="text"
+              placeholder="Address"
+            />
+            <input
+              formControlName="city"
+              class="form-control"
+              type="text"
+              placeholder="City"
+            />
+            <input
+              formControlName="postalCode"
+              class="form-control remove-arrows"
+              type="number"
+              placeholder="Postal Code"
+            />
+            <input
+              formControlName="phone"
+              class="form-control remove-arrows "
+              type="number"
+              placeholder="Phone"
+            />
+            <div class="d-flex justify-content-between">
+              <button class="cancelBtn"  (click)="resetForm()" type="button">Cancel</button>
+            </div>
+          </form>
+    </div>
+</section>
+
+<section class="container " id="total-pay">
+    <div class="col-md-4 offset-8">
+        <div class="totalPay d-flex justify-content-between">
+            <p class="fw-medium">Total Pay </p>
+            <p class="fw-bolder ">${{totalPrice | number : "1.0-2"}}</p>
+        </div>
+        <button (click)="router.navigate(['/checkout'])" class="checkoutBtn" form="shippingForm" type="submit">Checkout Now</button>
+    </div>
+</section>
+

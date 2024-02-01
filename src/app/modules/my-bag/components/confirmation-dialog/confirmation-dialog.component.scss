@@ -1,0 +1,29 @@
+.btn-style
+{
+    border: none;
+    border-radius: 3px;
+    padding:0.3rem 1rem ;
+}
+
+.cancel-btn
+{
+    margin-right: 1rem;
+    background-color: transparent;
+    transition: all 0.3s ;
+    &:hover
+    {
+        background-color: rgba(240, 240, 240, 1);
+    }
+    @extend .btn-style
+    
+}
+.confirm-btn
+{
+    transition: all 0.3s ;
+    &:hover
+    {
+        background-color: rgb(213, 211, 211);
+    }
+    @extend .btn-style
+
+}

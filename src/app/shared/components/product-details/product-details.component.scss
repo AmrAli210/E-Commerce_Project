@@ -23,7 +23,8 @@
 
 .product-card-body {
   h5 {
-    color: rgb(234, 153, 2);
+    color: rgb(255, 106, 0);
+    font-weight: 500;
   }
 }
 
@@ -69,3 +70,48 @@
     color: orange;
   }
 }
+
+@media screen and (max-width:568px)
+{
+  .customer-card
+  {
+    margin-right: 0;
+    img 
+    {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      bottom: 95%;
+      left: 36%;
+    }
+  }
+.customer-card-body
+  {
+    padding: 0.5rem 0rem !important;
+    h5 
+    {
+      padding: 0px 3px  !important;
+      font-size: 13px;
+    }
+  }
+
+}
+
+
+@media screen and (min-width:569px) and (max-width:768px)
+{
+
+}
+
+
+@media screen and (min-width:769px) and (max-width:992px)
+{
+
+}
+
+
+@media screen and (min-width:993px) 
+{
+
+}
+

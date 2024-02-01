@@ -1,0 +1,67 @@
+<section id="registration-page" class="container">
+  <div class=" w-50 m-auto">
+    <div class="registraion-info py-5">
+      <h2 class="text-center ">Sign Up</h2>
+      <div class="error-message" *ngIf="error"> 
+        <p>{{error}}</p>
+      </div>
+      <form id="registration-form" [formGroup]="registration" (ngSubmit)="submit()" >
+            <div class="form-group">
+              <input
+              formControlName="fullname"
+              class="form-control"
+              type="email"
+              placeholder="Full Name"
+            />
+              <span *ngIf="!registration.get('fullname')!.valid && registration.get('fullname')!.touched" class="check-invalid"> Please Enter Your Full Name</span>
+              </div>
+
+            <div class="form-group">
+              <input
+              formControlName="email"
+              class="form-control"
+              type="text"
+              placeholder="E-mail"
+            />
+              <span *ngIf="!registration.get('email')!.valid && registration.get('email')!.touched" class="check-invalid"> Please Enter Your E-mail</span>
+              </div>
+
+            <div class="form-group">
+              <input
+              formControlName="phone"
+              class="form-control remove-arrows"
+              type="text"
+              placeholder="Phone"
+            />
+              <span *ngIf="registration.get('phone')?.errors?.['required'] && registration.get('phone')?.touched" class="check-invalid"> Please Enter Your Phone Number</span>
+              <span *ngIf="!registration.get('phone')?.pristine  && registration.get('phone')?.errors?.['pattern']" class="check-invalid"> Please Enter Correct Phone Number</span>
+            </div>
+
+            <div class="form-group ">
+             <div class="eye-icon position-relative d-flex">
+              <input
+              formControlName="password"
+              class="form-control"
+              [type]="hide ? 'password' : 'text'"
+              placeholder="Password"
+            />
+               <fa-icon  (click)="switchIcon()" [icon]="eyeIcon" ></fa-icon>
+               </div>
+              <span *ngIf="!registration.get('password')!.valid && registration.get('password')!.touched" class="check-invalid"> Please Enter Your Password</span>
+            </div>
+            <!-- <input
+            formControlName="confirmPassword"
+              class="form-control"
+              type="password"
+              placeholder="Confrim Password"
+            /> -->
+            <div class="d-flex justify-content-between">
+              <button [disabled]="!registration.valid"  class="submit-btn" type="submit">Submit</button>
+            </div>
+      </form>
+      <div class=" mt-2 d-flex justify-content-end">
+        <p>You already have an email ? You can sign in from <strong role="button" (click)="router.navigate(['/sign-in-page'])">here</strong>  </p>
+      </div>
+    </div>
+  </div>
+</section>

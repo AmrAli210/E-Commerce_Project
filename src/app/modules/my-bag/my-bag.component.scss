@@ -1,0 +1,133 @@
+$border: 1px solid rgba(128, 128, 128, 0.4);
+
+.empty-bag {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 50px;
+    color: grey;
+  }
+}
+#mybag {
+  .brdr {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+    margin-bottom: 4rem;
+  }
+  h2 {
+    font-size: 25px;
+  }
+
+  .img-holder {
+    img {
+      width: 100%;
+      height: 195px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .product-card {
+    .mybag-header {
+      h3 {
+        font-size: 25px;
+        font-weight: 500;
+      }
+      p {
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+
+    .liquid {
+      color: rgba(128, 128, 128);
+    }
+
+    .mybag-footer {
+      .btns {
+        border: $border;
+        width: fit-content;
+        padding: 10px;
+        margin-right: 10px;
+
+        button {
+          border: none;
+          background-color: transparent;
+          color: grey;
+
+          &:focus {
+            outline: none;
+          }
+
+          i {
+            font-size: 10px;
+            border: none;
+            transition: all 0.3s;
+            &:hover {
+              color: black;
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+      .stock-left {
+        p {
+          font-weight: 600;
+          display: inline;
+        }
+      }
+
+      .trash-icon {
+        border: none;
+        background-color: transparent;
+
+        i {
+          color: rgb(66, 66, 66);
+          transition: all 0.3s;
+          font-size: 20px;
+          &:hover {
+            color: black;
+            transform: scale(1.2);
+          }
+        }
+      }
+      .deleteBtn {
+        i {
+          color: gray;
+          &:hover {
+            transform: scale(1);
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+  .checkout-journey {
+    p {
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .checkout-btn {
+      width: 60%;
+      margin: auto;
+      padding: 1rem;
+      background-color: rgb(41, 0, 135);
+      color: white;
+      border: none;
+      font-size: 25px;
+      font-weight: 500;
+      transition: all 0.5s;
+      &:hover {
+        background-color: rgb(76, 49, 160);
+      }
+    }
+    .proccedBtn {
+      color: grey;
+      &:hover {
+        &:hover {
+          background-color: rgb(76, 49, 160);
+        }
+      }
+    }
+  }
+}

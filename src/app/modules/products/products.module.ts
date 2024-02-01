@@ -1,19 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ProductsComponent } from './products.component';
 import { ProductInfoComponent } from './components/product-info/product-info.component';
-import { ProductCarouselComponent } from 'src/app/shared/components/product-carousel/product-carousel.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StarRatingModule } from 'angular-star-rating';
+import { ToastModule } from 'primeng/toast';
+
+
+
+
 
 
 
 @NgModule({
   declarations: [
     ProductsComponent,
-    // ProductCarouselComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
   ],
   imports: [
-    CommonModule,
-  ]
+    SharedModule,
+    FontAwesomeModule,
+    ToastModule,
+    StarRatingModule.forRoot(),
+  ],
+ 
 })
 export class ProductsModule { }

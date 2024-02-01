@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, ElementRef, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Product } from '../../interfaces/product.model';
-import { User } from '../../interfaces/user.model';
+import { UserComment } from '../../interfaces/user-comment.model';
 import { PopupDialogComponent } from 'src/app/modules/home/components/popup-dialog/popup-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -12,8 +12,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ProductCarouselComponent implements OnInit {
   @Input() products:Product[]=[];
-  @Input() customersComments:User[]=[];
-  @Input() productImgs:string[]=[];
+  @Input() customersComments:UserComment[]=[];
+  @Input() productImgs?:string[]=[];
 
   customOptions: OwlOptions = {
     loop: false,
@@ -34,7 +34,7 @@ export class ProductCarouselComponent implements OnInit {
         center: true,
       },
       500: {
-        items: 1,
+        items: 2,
         nav: true,
       },
       600: {
@@ -100,7 +100,7 @@ export class ProductCarouselComponent implements OnInit {
         center: true,
       },
       500: {
-        items: 1,
+        items: 1  ,
         nav: true,
         
       },
@@ -117,7 +117,7 @@ export class ProductCarouselComponent implements OnInit {
 
   constructor(private dialog: MatDialog) {}
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
   openPopup(selectedProduct:Product) {

@@ -1,0 +1,127 @@
+<div *ngIf="loading" class="loading-spinner">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<section *ngIf="products.length!==0" id="all-categories">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+
+        <div class="categoires">
+          <input type="checkbox" id="all-categoires" />
+          <label for="all-categoires" class="categoires-btn">
+            <span>All Categories</span>
+            <span class="arrow"></span>
+          </label>
+
+          <ul class="categoires-content" role="menu">
+            <li>
+                <label for="toner">
+                  <input  (click)="getValue('toner')" value="toner" type="checkbox" id="toner" />
+                  <span class="checkmark"></span>
+                  Toner 
+                </label>
+            </li>
+            <li>
+                <label for="cleaners">
+                  <input  (click)="getValue('cleaners')" value="cleaners" type="checkbox" id="cleaners" />
+                  <span class="checkmark"></span>
+                  Cleaners
+                </label>
+            </li>
+            <li>
+                <label for="masks">
+                  <input  (click)="getValue('masks')" value="masks" type="checkbox" id="masks" />
+                  <span class="checkmark"></span>
+                  Masks
+                </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="categoires">
+          <input type="checkbox" id="skin-type" />
+          <label for="skin-type" class="categoires-btn">
+            <span>Skin Types</span>
+            <span class="arrow"></span>
+          </label>
+
+          <ul class="categoires-content" role="menu">
+            <li>
+              <label for="sensitive">
+                <input  (click)="getValue('sensitive')" value="sensitive" type="checkbox" id="sensitive" />
+                <span class="checkmark"></span>
+                Sensitive
+              </label>
+            </li>
+            <li>
+              <label for="dry">
+                <input  (click)="getValue('dry')" value="dry" type="checkbox" id="dry" />
+                <span class="checkmark"></span>
+                Dry
+              </label>
+            </li>
+            <li>
+              <label for="oily">
+                <input  (click)="getValue('oily')" value="oily" type="checkbox" id="oily" />
+                <span class="checkmark"></span>
+                Oily
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="categoires">
+          <input  type="checkbox" id="formulation" />
+          <label for="formulation" class="categoires-btn">
+            <span>Formulation</span>
+            <span class="arrow"></span>
+          </label>
+
+          <ul class="categoires-content" role="menu">
+            <li>
+              <label for="oil">
+                <input  (click)="getValue('oil')" value="oil" type="checkbox" id="oil" />
+                <span class="checkmark"></span>
+                Oil
+              </label>
+            </li>
+
+            <li>
+              <label for="cream">
+                <input  (click)="getValue('cream')" value="cream" type="checkbox" id="cream" />
+                <span class="checkmark"></span>
+                Cream
+              </label>
+            </li>
+            <li>
+              <label for="lotion">
+                <input  (click)="getValue('lotion')" value="lotion" type="checkbox" id="lotion" />
+                <span class="checkmark"></span>
+                Lotion
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-9 ">
+        <div *ngIf="pageItems" class="row p-3">
+          <ng-container *ngFor="let product of pageItems ">
+            <div class="col-md-4 mb-4">
+              <app-product-details (currentProduct)="getSelectedProduct($event)" [productDetails]="product"></app-product-details>
+            </div>
+          </ng-container>
+          <mat-paginator 
+              [showFirstLastButtons]="true"
+              [length]="filterdProducts.length"
+              [pageSize]="6"
+              [pageIndex]="-1"
+              [pageSizeOptions]="[6,8]"
+              (page)="changePage($event)">
+          </mat-paginator>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

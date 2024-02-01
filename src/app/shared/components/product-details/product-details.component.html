@@ -3,7 +3,7 @@
 
   <div class="product-card-body mt-5 align-items-center d-flex justify-content-between">
     <h3>{{ productDetails.title }}</h3>
-    <h5>{{ productDetails.price }}</h5>
+    <h5>${{ productDetails.price }}</h5>
   </div>
   <a (click)="goToSelectedProduct()" class=" d-flex justify-content-center" routerLink="#"> Add to Cart </a>
 </div>

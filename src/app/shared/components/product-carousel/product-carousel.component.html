@@ -4,7 +4,7 @@
         <ng-container *ngFor="let product of products; let i = index">
           <ng-template carouselSlide [width]="300">
             <div class="border-1 surface-border border-round m-2 ">
-            <app-product-details (currentProduct)="getSelectedProduct($event)" [productDetails]="product"></app-product-details>
+            <app-product-details  (currentProduct)="getSelectedProduct($event)" [productDetails]="product"></app-product-details>
             </div>
           </ng-template>
         </ng-container>
@@ -23,8 +23,9 @@
         </ng-container>
       </owl-carousel-o>
     </div>
+    
 
-    <div *ngIf="productImgs.length" class="selected-product">
+    <div *ngIf="productImgs?.length" class="selected-product">
       <owl-carousel-o [options]="productOptions">
         <ng-container  *ngFor="let productImg of productImgs; let i = index">
           <ng-template  carouselSlide [width]="300">

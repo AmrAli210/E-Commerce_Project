@@ -1,0 +1,85 @@
+$border: 2px solid rgba(128, 128, 128, 0.2);
+.payment {
+  border: $border;
+  .cards-types {
+    border-bottom: $border;
+    border-radius: 2px;
+    padding: 1rem;
+
+    .cards-icon {
+      font-size: 25px;
+      fa-icon {
+        padding: 0.2rem;
+      }
+      .paypal-card {
+        color: rgb(15, 12, 108);
+      }
+      .visa-card {
+        color: rgb(19, 15, 133);
+      }
+      .amazon-card {
+        color: rgb(247, 146, 23);
+      }
+    }
+  }
+
+  input {
+    padding: 0.6rem;
+    &::placeholder {
+      color: #708da9;
+    }
+  }
+  .remove-arrows {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+  .form-control {
+    margin-bottom: 2rem;
+    &:focus {
+      box-shadow: none;
+      border: 1px solid rgb(16, 25, 193);
+      outline: none;
+    }
+  }
+
+  .spacing
+  {
+    margin-left: 4rem;
+  }
+
+}
+
+.shopping-summary
+{
+  border: $border;
+  padding: 1rem;
+  
+  .shopping-payment
+  {
+    border-bottom: $border;
+  }
+  h3
+  {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .price 
+  {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.checkoutBtn {
+  border-radius: 2px;
+  border: none;
+  width: 100%;
+  color: white;
+  background-color: rgb(41, 0, 135);
+  transition: all 0.5s;
+  padding: 0.8rem ;
+  &:hover {
+    background-color: rgb(76, 49, 160);
+  }
+}

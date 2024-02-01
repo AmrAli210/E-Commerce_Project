@@ -1,6 +1,3 @@
-import { Rating } from "./rating.model";
-import { Review } from "./review.model";
-
 export interface Product {
   id: number;
   title: string;
@@ -10,8 +7,20 @@ export interface Product {
   details: string;
   price: number;
   quantity: number;
-  rating?: Rating;
-  reviews?: Review[];
+
+  overall: number;
+  ratingstars: number;
+  recommended:number| string;
+  effectiveness: number;
+  texture: number;
+  vfm: number;
+  packaging: number;
+  userRecommend: number;
+  userRepurchase: number;
+
+  productComments:any;
+
+  tags:string[];
 }
 
 

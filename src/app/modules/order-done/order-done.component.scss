@@ -1,0 +1,29 @@
+.checked-order
+{
+    img 
+    {
+        width: 10%;
+    }
+    h3 
+    {
+        font-size: 30px;
+        font-weight: 500;
+        padding-top: 1rem;
+    }
+    p 
+    {
+        line-height: 0.5rem;
+    }
+    .home-btn {
+        margin-top: 1rem;
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 1rem;
+        border: none;
+        background-color: rgb(41, 0, 135);
+        transition: all 0.5s;
+        &:hover {
+          background-color: rgb(76, 49, 160);
+        }
+      }
+}

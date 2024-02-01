@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../interfaces/product.model';
-import { User } from '../../interfaces/user.model';
+import { UserComment } from '../../interfaces/user-comment.model';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
-import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,15 +11,16 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
   @Input() productDetails?: Product;
-  @Input() commentDetails?: User;
+  @Input() commentDetails?: UserComment;
   @Output() currentProduct: EventEmitter<Product> = new EventEmitter<Product>();
-  testing :EventEmitter<Product>=new EventEmitter<Product>()
+
 
   faStar = faStar;
 
-  constructor( public router: Router , private service:ProductService) {}
+  constructor( public router: Router ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 
   getSelectedProduct(){
@@ -28,7 +28,8 @@ export class ProductDetailsComponent implements OnInit {
   }
   goToSelectedProduct()
   {
-    this.router.navigate(['/product-info'],{queryParams: { id: this.productDetails?.id , category: this.productDetails?.category}});    
-    
+   
+    this.router.navigate(['/product-info'],{queryParams: { id: this.productDetails?.id }});  
+  
   }
 }

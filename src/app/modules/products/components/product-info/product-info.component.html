@@ -1,31 +1,161 @@
-<!-- <div class="row">
-    <div class="product-img col-md-6">
-      <app-product-carousel [productImgs]="data.imgs"></app-product-carousel>
+<div *ngIf="!productInfo" class="loading-spinner">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div class="row me-0">
+  <div class="product-img col-md-6">
+    <app-product-carousel [productImgs]="productInfo?.imgs"></app-product-carousel>
+  </div>
+  <div *ngIf="productInfo" class="product-details p-5 col-md-6">
+    <div>
+      <h2>{{ productInfo.title }}</h2>
+      <h4 class="fw-bold">${{ productInfo.price }}</h4>
+
+      <div class="btns d-inline">
+        <button type="button" (click)="removeItem()">
+          <i class="pi pi-minus"></i>
+        </button>
+        <span class="mx-2"> {{ quantity }} </span>
+        <button type="button" (click)="addItem()">
+          <i class="pi pi-plus"></i>
+        </button>
+      </div>
+      <span class="stock-left">
+        Stock:
+        <p>{{ productInfo.quantity }} left</p>
+      </span>
+      <div class="mt-4 d-flex"> 
+          <p>Total Price :</p>
+           <p class="fw-bold priceClr ms-1"> ${{this.myBagProduct!.purchasePrice | number: '1.0-2'}}</p >
+      </div>
+
+      <div class="product-desc py-3 mt-4">
+        <h3 class="m-0 p-0 fs-6 fw-bolder">Product Details</h3>
+        <p class="my-2">{{ productInfo.details }}</p>
+      </div>
+
     </div>
-  
-    <div class="product-details p-5 col-md-6">
-  
-      <div mat-dialog-content>
-  
-        <h2>{{ data.title }}</h2>
-        <h4>{{ data.price }}</h4>
-  
-        <div class="btns d-inline">
-          <button type="button" (click)="removeItem()"><i class="pi pi-minus"></i></button>
-          <span class="mx-2"> {{quantity}} </span>
-          <button type="button" (click)="addItem()"><i class="pi pi-plus"></i></button>
+
+    <p-toast position="top-center" key="tc"></p-toast>
+    <a pButton pRipple label="Top Center" (click)="addProduct()" class="cart-btn d-flex justify-content-center" routerLink="#">
+      Add to Cart
+    </a>
+  </div>
+</div>
+
+<section *ngIf="productInfo" class="p-5" id="rating">
+  <div class="container">
+    <div class="row rating-broder">
+      <div class="col-md-9 p-5">
+        <div class="row">
+          <div class="col-md-6">
+            <strong>Average user rating</strong>
+            <div class="d-flex stars">
+              <h2>{{ productInfo.overall }}</h2>
+              <star-rating size="large" [disabled]="true" [starType]="'svg'" [rating]="productInfo.ratingstars"></star-rating>
+            </div>
+            <p>{{ productInfo.recommended }}</p>
+          </div>
+
+          <div class="col-md-6">
+            <strong>Rating details</strong>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="rating-background">
+                  <p>{{ productInfo.effectiveness }}</p>
+                  <span>Effectiveness</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rating-background">
+                  <p>{{ productInfo.vfm }}</p>
+                  <span>Value For Money</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="rating-background">
+                  <p>{{ productInfo.texture }}</p>
+                  <span>Texture</span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="rating-background">
+                  <p>{{ productInfo.packaging }}</p>
+                  <span>Packaging</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <span class="stock-left"> Stock: <p>{{ data.quantity }} left</p> </span>
-  
-        <div class="product-desc py-3 mt-4">
-          <h3 class="m-0 p-0 fs-6 fw-bolder">Product Details</h3>
-          <p class="my-2">{{ data.details }}</p>
+
+        <div class="recommend-repurchase d-flex">
+          <div class="col-md-6">
+            <div class="recommended d-flex justify-content-center">
+              <fa-icon [icon]="like"></fa-icon>
+              <p>{{ productInfo.userRecommend }} users recommend</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="repurchase d-flex justify-content-center">
+              <fa-icon [icon]="shopping"></fa-icon>
+              <p>{{ productInfo.userRepurchase }} users repusrchase</p>
+            </div>
+          </div>
         </div>
       </div>
-  
-        <a class=" d-flex justify-content-center" routerLink="#"> Add to Cart </a>
-  
+
+      <div class="col-md-3 p-5 border-start">
+        <div class="add-review text-center">
+          <h3 class="fw-bold">Have you tried this product?</h3>
+          <p>If no.? You have to try our product</p>
+          <p>If yes.? please share reviews</p>
+          <a class="cart-btn d-flex justify-content-center" routerLink="#">
+            Add Review
+          </a>
+        </div>
+      </div>
     </div>
-  
   </div>
-   -->
+</section>
+
+<section *ngIf="productInfo" id="reviews">
+  <div class="container">
+    <div class="" *ngFor="let comment of productInfo.productComments">
+    <div class="row py-4 mb-4 border-bottom ">
+        <div class="col-md-4">
+          <div class="user-profile d-flex">
+            <img [src]="comment.userImage" alt=""/>
+            <div class="ps-3 profile-details">
+              <h3>{{comment.userName}}</h3>
+              <fa-icon [icon]="verified"></fa-icon>
+              <p>{{comment.userVerified}}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-8">
+          <div class="user-comment-rating d-flex justify-content-between">
+            <star-rating size="medium" [disabled]="true" [starType]="'svg'" [rating]="comment.userRating"></star-rating>
+            <p>{{ comment.date }}</p>
+          </div>
+
+          <div class="user-comment-details">
+            <h4>{{comment.userMainComment}}</h4>
+            <p> {{comment.userComment}}</p>
+            <div class="user-likes">
+              <fa-icon [icon]="like"></fa-icon>
+              <p>{{comment.likes}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

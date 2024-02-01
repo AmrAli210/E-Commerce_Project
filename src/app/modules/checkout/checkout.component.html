@@ -1,0 +1,66 @@
+<section class="container pt-5" id="checkout">
+  <h2>Checkout</h2>
+  <div class="row mb-5 ">
+    <div class="col-md-6">
+        <div class="payment">
+            <div class="cards-types">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="m-0 p-0">Credit Card</p>
+                    <div class="cards-icon">
+                        <fa-icon class="paypal-card" [icon]="PaypalCard"></fa-icon>
+                        <fa-icon class="amazon-card" [icon]="AmazonPayCard"></fa-icon>
+                        <fa-icon class="visa-card" [icon]="VisaCard"></fa-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards-info p-3">
+                <form id="card-details" [formGroup]="cardsInfo" (ngSubmit)="submit()">
+                    <input
+                    formControlName="cardNumber"
+                    class="form-control remove-arrows"
+                    type="number"
+                    placeholder="Card Number"
+                    />
+                    <input
+                    formControlName="nameOnCArd"
+                    class="form-control"
+                    type="text"
+                    placeholder="Name On Card"
+                    />
+                    <p-dropdown formControlName="month" [options]="month"  placeholder="Month"></p-dropdown>
+                    <p-dropdown  class="spacing" formControlName="year" [options]="years" placeholder="Year"></p-dropdown>
+                    <input
+                    formControlName="ccv"
+                    class="form-control remove-arrows w-25 d-inline spacing"
+                    type="number"
+                    placeholder="CCV"
+                    />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-5 offset-1">
+        <div class="shopping-summary">
+            <div class="shopping-payment pb-3 mb-3">
+                <h3>shopping Summary</h3>
+                <div class="price ">
+                    <p>Total Price ({{myBagProducts.length}} Product)</p>
+                    <strong>${{totalPrice}}</strong>
+                </div>
+                <div class="price">
+                    <p>Total Shipping Cost</p>
+                    <strong> $20</strong>
+                </div>
+            </div>
+            <div class="price">
+                <p>Total</p>
+                <strong>{{totalPrice + 20}}</strong>
+            </div>
+            <button (click)="router.navigate(['/order-done'])" class="checkoutBtn" form="shippingForm" type="submit">Buy</button>
+        </div>
+        
+    </div>
+  </div>
+</section>

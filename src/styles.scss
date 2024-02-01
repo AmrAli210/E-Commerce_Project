@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeicons/primeicons.css";
+@import 'css-star-rating/scss/star-rating';
+
+$rating-color:rgb(255, 0, 0);
 
 
 
-html, body { height: 100%; }
+html { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
@@ -57,9 +60,53 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
   }
 }
-
-
 .mdc-dialog__surface{
   overflow: hidden !important;
 }
+
+
+.rating.color-negative .star-container .star {
+  svg {
+    fill: $rating-color !important;
+    font-weight: 800 !important;
+    }
+  i {
+    color: $rating-color !important;
+    }
+
+}
+
+.rating.color-ok .star-container .star {
+  svg {
+    fill: $rating-color !important;
+    font-weight: 800 !important;
+
+  }
+  i {
+    color: $rating-color !important;
+    }
+}
+
+.rating.color-positive .star-container .star {
+  svg {
+    fill: $rating-color !important;
+    font-weight: 800 !important;
+    
+    }
+  i {
+    color: $rating-color !important;
+  }
+}
+
+
+.user-comment-rating //product-review in products page 
+  {
+    .star-container
+    {
+      margin-left: 0px ;
+    }
+  }
+
+
+
 

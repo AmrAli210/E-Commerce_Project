@@ -1,0 +1,114 @@
+.product-card {
+  background: -webkit-linear-gradient(
+    129deg,
+    rgba(11, 11, 44, 1) 6%,
+    rgba(9, 15, 125, 1) 80%,
+    rgba(11, 11, 40, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    129deg,
+    rgba(11, 11, 44, 1) 6%,
+    rgba(9, 15, 125, 1) 80%,
+    rgba(11, 11, 40, 1) 100%
+  );
+  background: -o-linear-gradient(
+    129deg,
+    rgba(11, 11, 44, 1) 6%,
+    rgba(9, 15, 125, 1) 80%,
+    rgba(11, 11, 40, 1) 100%
+  );
+  background: linear-gradient(
+    129deg,
+    rgba(11, 11, 44, 1) 6%,
+    rgba(9, 15, 125, 1) 80%,
+    rgba(11, 11, 40, 1) 100%
+  );
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  color: white;
+  transition: all 0.3s;
+
+  &:hover {
+    background-position: 100px;
+  }
+  img {
+    width: 50%;
+    height: 10rem;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
+
+  .product-info {
+    margin-left: 2rem;
+    h2 {
+      font-size: 15px;
+      margin: 0;
+      font-family: "Roboto Condensed", sans-serif;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 13px;
+      transition: opacity 0.3s ease-out;
+    }
+  }
+}
+
+#shipping-details {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgb(201, 201, 201);
+
+  h2 {
+    font-size: 35px;
+    padding-bottom: 1rem;
+  }
+    
+  input 
+  {
+    &::placeholder
+    {
+      color: rgb(141, 127, 127);
+    }
+  }
+  .remove-arrows {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+  .form-control {
+    margin-bottom: 2rem;
+    &:focus {
+      box-shadow: none;
+      border: 1px solid rgb(16, 25, 193);
+      outline: none;
+    }
+  }
+  .cancelBtn {
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: rgb(41, 0, 135);
+    transition: all 0.5s;
+    &:hover {
+      background-color: rgb(76, 49, 160);
+    }
+  }
+}
+#total-pay {
+  padding: 2rem 0;
+  .checkoutBtn {
+    border-radius: 2px;
+    border: none;
+    width: 100%;
+    color: white;
+    background-color: rgb(41, 0, 135);
+    transition: all 0.5s;
+    padding: 0.8rem ;
+    &:hover {
+      background-color: rgb(76, 49, 160);
+    }
+  }
+}

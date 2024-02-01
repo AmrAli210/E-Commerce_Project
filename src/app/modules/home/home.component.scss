@@ -1,7 +1,6 @@
 $font-family: Lugrasimo;
 $main-backgroundColor: #f9f9f9;
-$border: 1px solid rgb(255, 255, 255,0.5);
-
+$border: 1px solid rgb(255, 255, 255, 0.5);
 
 header {
   background-color: $main-backgroundColor;
@@ -21,6 +20,7 @@ header {
 .img-container {
   display: flex;
   align-items: flex-end;
+  width: 100%;
 
   .bg-types {
     background-position: center center;
@@ -87,29 +87,25 @@ header {
   width: 80%;
   margin: auto;
   padding-bottom: 0.5rem;
- p 
- {
-  display: inline;
-  cursor: pointer;
-  margin-right: 1.5rem;
-  color: rgb(128, 128, 128,0.6);
-  position: relative;
- }
- .active
- {
-  color: black;
-  &::after
-  {
-    content: '';
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    top: 26px;
-    left: 0;
-    background-color: orange;
-
+  p {
+    display: inline;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    color: rgba(128, 128, 128, 0.4);
+    position: relative;
   }
- }
+  .active {
+    color: black;
+    &::after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      top: 26px;
+      left: 0;
+      background-color: orange;
+    }
+  }
 }
 
 #customers-comments {
@@ -125,27 +121,158 @@ header {
     padding: 40px;
     text-align: center;
 
-    fa-icon
-    {
+    fa-icon {
       font-size: 35px;
     }
-    h4 
-    {
+    h4 {
       margin-top: 1.5rem;
       font-size: 20px;
       font-weight: 500;
     }
-    p
-    {
+    p {
       font-size: 13px;
     }
   }
 
-  .brdr
-  {
+  .brdr {
     border-left: $border;
-    border-right: $border ;
+    border-right: $border;
   }
 }
 
 
+
+@media screen and (max-width: 568px) {
+  #bestSeller
+  {
+    h2 
+    {
+      font-size: 25px;
+    }
+  }
+  .main-desc
+  {
+    h2 
+    {
+      font-size: 30px;
+      line-height: 30px;
+
+    }
+  }
+  .img-container
+  {
+    .first-img {
+      width: 20%;
+      height: 300px;
+      background-image: url("/assets/imgs/home imgs/skin care 1.jpg");
+    }
+  
+    .second-img {
+      width: 18%;
+      height: 270px;
+      background-image: url("/assets/imgs/home imgs/skin care 2.jpg");
+    }
+  
+    .third-img {
+      width: 23%;
+      height: 240px;
+      background-image: url("/assets/imgs/home imgs/skin care 3.jpg");
+    }
+  
+    .fourth-img {
+      width: 17%;
+      height: 200px;
+      background-image: url("/assets/imgs/home imgs/skin care 4.jpg");
+      @extend .bg-types;
+    }
+  
+    .fifth-img {
+      width: 20%;
+      height: 330px;
+      background-image: url("/assets/imgs/home imgs/skin care 5.jpg");
+    }
+  
+    .sixth-img {
+      width: 20%;
+      height: 310px;
+      background-image: url("/assets/imgs/home imgs/skin care 6.jpg");
+      @extend .bg-types;
+    }
+    
+  }
+  .category-btns {
+    width: 100%;
+    padding-bottom: 0.3rem; 
+
+    p 
+    {
+      font-size: 10px;
+      margin-right: 1.5%;
+     
+    } 
+    .active
+    {
+      &::after {
+        top: 21px;
+        height: 1.5px;
+      }
+    }
+
+  }
+  .customers-comments
+  {
+    .carousel-title
+    {
+      h2 
+      {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 569px) and (max-width: 768px) {
+  .main-desc
+  {
+    h2 
+    {
+      font-size: 40px;
+      line-height: 45px;
+
+    }
+  } 
+  .category-btns {
+    width: 100%;
+    padding-bottom: 0.3rem;
+
+    p 
+    {
+      font-size: 15px;
+      margin-right: 2%;
+     
+    } 
+    .active
+    {
+      &::after {
+        top: 24px;
+        height: 1.5px;
+      }
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .contact-us
+  {
+    .contact-info
+    {
+      padding: 10px ;
+    }
+  }
+ 
+}
+
+@media screen and (min-width: 993px) {
+}
