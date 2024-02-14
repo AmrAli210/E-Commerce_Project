@@ -15,13 +15,13 @@ export class AuthenticationService {
 
 
   signUp(registration: FormGroup): Observable<UsersSignUp> {
-    return this.http.post<UsersSignUp>('http://localhost:5000/api/register',registration);
+    return this.http.post<UsersSignUp>('https://e-commerce-apis-k53h.onrender.com/api/register',registration);
   }
 
   login(login: FormGroup) {
-    return this.http.post('http://localhost:5000/api/login', login);
+    return this.http.post('https://e-commerce-apis-k53h.onrender.com/api/login', login);
   }
-
+   
   constructor(private router: Router) {
     this.handleSuccessfulLogin()
   }
